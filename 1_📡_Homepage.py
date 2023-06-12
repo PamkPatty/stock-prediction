@@ -104,7 +104,7 @@ st.subheader('Distribution of Data Points since ' + str(START) + '📊')
 with st.expander("🧩Show Clue"):
     st.write(data.describe())
 fig = plt.figure()
-sns.displot(data['Close']) 
+sns.distplot(data['Close']) 
 st.pyplot(fig)
 
 # Predict forecast with Prophet.
