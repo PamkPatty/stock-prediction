@@ -104,7 +104,7 @@ st.subheader('Distribution of Data Points since ' + str(START) + '📊')
 with st.expander("🧩Show Clue"):
     st.write(data.describe())
 fig = plt.figure()
-sns.distplot(data['Close']) 
+sns.displot(data['Close']) 
 st.pyplot(fig)
 
 # Predict forecast with Prophet.
@@ -264,7 +264,7 @@ else:
 #     with st.expander("🧩Show Clue"):
 #         st.markdown('The **Distribution** of a data set is the shape of the graph when all possible values are plotted on a frequency graph (showing how often they occur). This sample is used to make conclusions about the whole data set.')
 #     fig = plt.figure(figsize=(9, 7))
-#     sns.distplot(data['Close'])
+#     sns.displot(data['Close'])
 #     st.pyplot(fig)
 
 #     # Split data into train and test sets
