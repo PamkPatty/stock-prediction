@@ -1,3 +1,1 @@
-# stockprediction
-# stockprediction
-# stock-prediction
+# deployed on Render
