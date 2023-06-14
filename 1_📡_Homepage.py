@@ -11,6 +11,7 @@ from prophet.plot import add_changepoints_to_plot
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 from plotly import graph_objs as go
 import seaborn as sns
@@ -167,6 +168,7 @@ if not test_data.empty:
     # Calculate Prophet's Test MAE, RMSE, and R-squared
     mae = mean_absolute_error(test_data['y'], forecast['yhat'])
     rmse = np.sqrt(mean_squared_error(test_data['y'], forecast['yhat']))
+    mse = mean_squared_error(test_data['y'], forecast['yhat'])
     r2 = r2_score(test_data['y'], forecast['yhat'])
 
     # Show Prophet's Test Metrics
@@ -188,9 +190,11 @@ if not test_data.empty:
         st.info("Model evaluation is an essential step in the machine learning and data science workflow. It involves assessing the performance and effectiveness of a trained model using various evaluation metrics and techniques.")
         st.write("R-squared tends to 1️⃣ from -1️⃣")
         st.write("MAE tends to 0️⃣ from ♾")
+        st.write("MSE tends to 0️⃣ from ♾")
         st.write("RMSE tends to 0️⃣ from ♾")
     st.write("R-squared:", r2)
     st.write("MAE (Mean Absolute Error):", mae)
+    st.write("MSE (Mean Squared Error):", mse)
     st.write("RMSE (Root Mean Squared Error):", rmse)
 
     
